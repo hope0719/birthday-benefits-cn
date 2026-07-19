@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国生日福利全攻略 | 2025-2026 最新版</title>
+    <meta name="description" content="汇总中国各大商家、平台在生日周/月/当天的免费福利、优惠券、会员权益，涵盖餐饮、景区、视频、银行、航司、酒店等类别。">
+    <style>
+        :root {
+            --primary: #e74c3c;
+            --primary-dark: #c0392b;
+            --secondary: #3498db;
+            --accent: #f39c12;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --text-light: #7f8c8d;
+            --border: #e0e0e0;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-hover: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .hero .meta {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Search */
+        .search-bar {
+            max-width: 600px;
+            margin: -30px auto 30px;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            box-shadow: var(--shadow-hover);
+            outline: none;
+        }
+
+        /* Category Nav */
+        .category-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 0 20px 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cat-btn {
+            padding: 8px 18px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        /* Section */
+        .section {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title .icon { font-size: 1.8rem; }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .card-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+            margin-left: 8px;
+        }
+
+        .badge-free { background: #d4edda; color: #155724; }
+        .badge-discount { background: #fff3cd; color: #856404; }
+        .badge-month { background: #d1ecf1; color: #0c5460; }
+        .badge-points { background: #e2e3f0; color: #383d8b; }
+
+        .card-benefit {
+            font-size: 1.05rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .card-condition {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border);
+            font-size: 0.88rem;
+            color: var(--text);
+        }
+
+        .card-condition strong {
+            color: var(--primary);
+        }
+
+        /* Tips Box */
+        .tips-box {
+            background: #fff8e1;
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .tips-box h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .tips-box ul {
+            margin-left: 20px;
+        }
+
+        .tips-box li {
+            margin: 6px 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        /* No results */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>🎂 中国生日福利全攻略</h1>
+    <p>生日周 / 生日月 / 生日当天，各大商家、平台可领取的免费福利与优惠汇总</p>
+    <div class="meta">更新日期：2026年7月 | 覆盖餐饮、景区、视频、银行、航司、酒店等类别</div>
+</div>
+
+<div class="search-bar">
+    <input type="text" id="searchInput" placeholder="🔍 搜索商家、平台、福利类型..." autocomplete="off">
+</div>
+
+<nav class="category-nav" id="categoryNav">
+    <button class="cat-btn active" data-cat="all">全部</button>
+    <button class="cat-btn" data-cat="food">🍽️ 餐饮</button>
+    <button class="cat-btn" data-cat="attraction">🎢 景区/娱乐</button>
+    <button class="cat-btn" data-cat="media">📺 视频/音乐/平台</button>
+    <button class="cat-btn" data-cat="bank">💳 银行/信用卡</button>
+    <button class="cat-btn" data-cat="airline">✈️ 航空公司</button>
+    <button class="cat-btn" data-cat="hotel">🏨 酒店</button>
+    <button class="cat-btn" data-cat="retail">🛍️ 零售/美妆</button>
+    <button class="cat-btn" data-cat="app">📱 电商/APP</button>
+    <button class="cat-btn" data-cat="telco">📶 运营商</button>
+</nav>
+
+<main class="container">
+
+    <!-- 餐饮 -->
+    <section class="section active" id="sec-food">
+        <h2 class="section-title"><span class="icon">🍽️</span>餐饮类</h2>
+        <div class="cards-grid">
+            <div class="card" data-keywords="星巴克 咖啡 免费饮品 蛋糕">
+                <div class="card-header"><div class="card-title">星巴克</div><span class="card-badge badge-free">免费</span></div>
+                <div class="card-benefit">免费中杯手工调制饮品1杯 或 指定蛋糕1份</div>
+                <div class="card-meta">⏰ 生日当天起14天内有效</div>
+                <div class="card-condition"><strong>条件：</strong>玉星级及以上会员；小程序完善生日信息</div>
+            </div>
+            <div class="card" data-keywords="海底捞 火锅 满减 长寿面">
+                <div class="card-header"><div class="card-title">海底捞</div><span class="card-badge badge-discount">满200减30</span></div>
+                <div class="card-benefit">满200减30元代金券 + 随机果盘/长寿面</div>
+                <div class="card-meta">⏰ 生日当月堂食有效</div>
+                <div class="card-condition"><strong>条件：</strong>注册会员+完善生日；部分门店需主动询问</div>
+            </div>
+            <div class="card" data-keywords="太二 酸菜鱼 生日面 免费">
+                <div class="card-header"><div class="card-title">太二酸菜鱼</div><span class="card-badge badge-free">免费生日面</span></div>
+                <div class="card-benefit">免费生日面1碗</div>
+                <div class="card-meta">⏰ 生日前7天发放，次日可用；每年1次</div>
+                <div class="card-condition"><strong>条件：</strong>太二宇宙联盟小程序注册+填写生日</div>
+            </div>
+            <div class="card" data-keywords="茶百道 奶茶 第二杯半价 免单">
+                <div class="card-header"><div class="card-title">茶百道</div><span class="card-badge badge-month">等级礼遇</span></div>
+                <div class="card-benefit">LV1-LV6对应：第二杯半价 → 免单券+折扣券</div>
+                <div class="card-meta">⏰ 生日前7天发放，生日当天有效</div>
+                <div class="card-condition"><strong>条件：</strong>小程序会员+填写生日</div>
+            </div>
+            <div class="card" data-keywords="喜茶 奶茶 折扣 周边">
+                <div class="card-header"><div class="card-title">喜茶</div><span class="card-badge badge-discount">8折+周边</span></div>
+                <div class="card-benefit">生日当天首杯8折 + 随机生日周边1份</div>
+                <div class="card-meta">⏰ 生日当天起7天内有效</div>
+                <div class="card-condition"><strong>条件：</strong>喜茶GO小程序会员+完善生日</div>
+            </div>
+            <div class="card" data-keywords="奈雪 免费赠饮 33元">
+                <div class="card-header"><div class="card-title">奈雪的茶</div><span class="card-badge badge-free">免费赠饮</span></div>
+                <div class="card-benefit">免费赠饮（33元及以下商品）</div>
+                <div class="card-meta">⏰ 生日前3天发放，有效期30天</div>
+                <div class="card-condition"><strong>条件：</strong>V4及以上会员；小程序完善生日</div>
+            </div>
+            <div class="card" data-keywords="霸王茶姬 免费赠饮 徽章">
+                <div class="card-header"><div class="card-title">霸王茶姬</div><span class="card-badge badge-free">免费赠饮</span></div>
+                <div class="card-benefit">免费赠饮1杯 + 生日限定徽章</div>
+                <div class="card-meta">⏰ 生日当月有效</div>
+                <div class="card-condition"><strong>条件：</strong>V4及以上会员；小程序完善生日</div>
+            </div>
+            <div class="card" data-keywords="瑞幸 咖啡 5折券 4张">
+                <div class="card-header"><div class="card-title">瑞幸咖啡</div><span class="card-badge badge-discount">4张5折券</span></div>
+                <div class="card-benefit">4张5折券</div>
+                <div class="card-meta">⏰ 生日月，有效期14天</div>
+                <div class="card-condition"><strong>条件：</strong>APP注册+填写生日</div>
+            </div>
+            <div class="card" data-keywords="肯德基 半价桶 大神卡">
+                <div class="card-header"><div class="card-title">肯德基</div><span class="card-badge badge-discount">生日半价桶</span></div>
+                <div class="card-benefit">生日半价桶（堂食）+ 外送2张优惠券</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>大神卡会员；APP填写生日</div>
+            </div>
+            <div class="card" data-keywords="麦当劳 麦金卡 免费派">
+                <div class="card-header"><div class="card-title">麦当劳</div><span class="card-badge badge-free">免费派</span></div>
+                <div class="card-benefit">麦金卡会员免费派1个</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>麦金卡会员；APP填写生日</div>
+            </div>
+            <div class="card" data-keywords="汉堡王 半价 鸡盒 豆浆">
+                <div class="card-header"><div class="card-title">汉堡王</div><span class="card-badge badge-discount">半价券包</span></div>
+                <div class="card-benefit">半价汉堡/半价鸡盒/1元豆浆</div>
+                <div class="card-meta">⏰ 生日前3天发放</div>
+                <div class="card-condition"><strong>条件：</strong>微信注册会员+填写生日</div>
+            </div>
+            <div class="card" data-keywords="必胜客 免费蛋糕 白银会员">
+                <div class="card-header"><div class="card-title">必胜客</div><span class="card-badge badge-free">免费小蛋糕</span></div>
+                <div class="card-benefit">免费生日小蛋糕1份</div>
+                <div class="card-meta">⏰ 生日当天堂食</div>
+                <div class="card-condition"><strong>条件：</strong>白银及以上会员；小程序完善生日</div>
+            </div>
+            <div class="card" data-keywords="必胜客 8折 披萨券">
+                <div class="card-header"><div class="card-title">必胜客（广州版）</div><span class="card-badge badge-discount">8折+披萨券</span></div>
+                <div class="card-benefit">8折 + 超级至尊6寸披萨外卖券</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>会员</div>
+            </div>
+            <div class="card" data-keywords="比格披萨 免单券 粉丝级">
+                <div class="card-header"><div class="card-title">比格披萨</div><span class="card-badge badge-free">生日免单券</span></div>
+                <div class="card-benefit">生日免单券1张（粉丝级以上）</div>
+                <div class="card-meta">⏰ 生日前7天内任意一天，15天有效期</div>
+                <div class="card-condition"><strong>条件：</strong>累计消费达标+会员等级</div>
+            </div>
+            <div class="card" data-keywords="松鹤楼 汤面 代金券">
+                <div class="card-header"><div class="card-title">松鹤楼</div><span class="card-badge badge-discount">面+代金券</span></div>
+                <div class="card-benefit">红/白汤面1份 + 10元代金券</div>
+                <div class="card-meta">⏰ 30天有效期</div>
+                <div class="card-condition"><strong>条件：</strong>小程序注册+完善生日，不可修改；每年1次</div>
+            </div>
+            <div class="card" data-keywords="宜家 蛋糕 提拉米苏 优惠券">
+                <div class="card-header"><div class="card-title">宜家</div><span class="card-badge badge-free">免费蛋糕</span></div>
+                <div class="card-benefit">免费提拉米苏/生日蛋糕 或 线上无门槛优惠券</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>IKEA小程序会员+填写生日</div>
+            </div>
+            <div class="card" data-keywords="九毛九 长寿面 9.9元">
+                <div class="card-header"><div class="card-title">九毛九</div><span class="card-badge badge-discount">9.9元长寿面</span></div>
+                <div class="card-benefit">9.9元购买原价99元长寿面</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>到店出示身份证</div>
+            </div>
+            <div class="card" data-keywords="西贝 筱面村 代金券">
+                <div class="card-header"><div class="card-title">西贝筱面村</div><span class="card-badge badge-discount">50-60元代金券</span></div>
+                <div class="card-benefit">普通会员50元 / VIP会员60元代金券</div>
+                <div class="card-meta">⏰ 普通会员生日前10天发放</div>
+                <div class="card-condition"><strong>条件：</strong>微信注册会员</div>
+            </div>
+            <div class="card" data-keywords="小龙坎 锅底免费 7折">
+                <div class="card-header"><div class="card-title">小龙坎</div><span class="card-badge badge-free">锅底免费</span></div>
+                <div class="card-benefit">锅底免费 + 7折菜品券</div>
+                <div class="card-meta">⏰ 当月有效，领取后15天</div>
+                <div class="card-condition"><strong>条件：</strong>提前一个月微信注册会员</div>
+            </div>
+            <div class="card" data-keywords="乐乐茶 买一送一">
+                <div class="card-header"><div class="card-title">乐乐茶</div><span class="card-badge badge-discount">买一送一</span></div>
+                <div class="card-benefit">生日买一送一券</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>微信注册会员；可免排队</div>
+            </div>
+            <div class="card" data-keywords="大龙燚 100元券 蛋糕">
+                <div class="card-header"><div class="card-title">大龙燚</div><span class="card-badge badge-discount">100元券+蛋糕</span></div>
+                <div class="card-benefit">100元优惠券 + 肥牛造型蛋糕</div>
+                <div class="card-meta">⏰ 当月有效</div>
+                <div class="card-condition"><strong>条件：</strong>会员</div>
+            </div>
+            <div class="card" data-keywords="探鱼 烤鱼 凉面 折扣">
+                <div class="card-header"><div class="card-title">探鱼</div><span class="card-badge badge-free">免费凉面</span></div>
+                <div class="card-benefit">重庆鸡丝凉面1份（领取后30天有效）</div>
+                <div class="card-meta">⏰ 生日月</div>
+                <div class="card-condition"><strong>条件：</strong>提前一个月注册会员</div>
+            </div>
+            <div class="card" data-keywords="和府捞面 生日面 邀请券">
+                <div class="card-header"><div class="card-title">和府捞面</div><span class="card-badge badge-free">生日面</span></div>
+                <div class="card-benefit">生日邀请券 → 到店送生日面1份</div>
+                <div class="card-meta">⏰ —</div>
+                <div class="card-condition"><strong>条件：</strong>微信注册+充值成为尊享会员</div>
+            </div>
+            <div class="card" data-keywords="DQ 冰雪皇后 8折 冰淇淋">
+                <div class="card-header"><div class="card-title">DQ冰雪皇后</div><span class="card-badge badge-discount">8折</span></div>
+                <div class="card-benefit">新款冰淇淋/雪糕8折</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>会员</div>
+            </div>
+            <div class="card" data-keywords="哈根达斯 蛋糕 半价">
+                <div class="card-header"><div class="card-title">哈根达斯</div><span class="card-badge badge-discount">蛋糕半价</span></div>
+                <div class="card-benefit">生日蛋糕半价（需购买268元以上蛋糕）</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>会员</div>
+            </div>
+            <div class="card" data-keywords="1828王老吉 半价券">
+                <div class="card-header"><div class="card-title">1828王老吉</div><span class="card-badge badge-discount">半价券</span></div>
+                <div class="card-benefit">半价券（购买店内任意饮品）</div>
+                <div class="card-meta">⏰ 生日前发放</div>
+                <div class="card-condition"><strong>条件：</strong>微信注册会员</div>
+            </div>
+            <div class="card" data-keywords="许留山 免费兑换 多芒小丸子">
+                <div class="card-header"><div class="card-title">许留山</div><span class="card-badge badge-free">免费兑换</span></div>
+                <div class="card-benefit">多芒小丸子免费兑换券（到店任意消费）</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>微信注册会员</div>
+            </div>
+            <div class="card" data-keywords="西树泡芙 免费泡芙">
+                <div class="card-header"><div class="card-title">西树泡芙</div><span class="card-badge badge-free">免费泡芙</span></div>
+                <div class="card-benefit">免费泡芙1个</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>会员</div>
+            </div>
+            <div class="card" data-keywords="面包新语 免费面包">
+                <div class="card-header"><div class="card-title">面包新语</div><span class="card-badge badge-free">免费面包</span></div>
+                <div class="card-benefit">任选12元以内面包1个</div>
+                <div class="card-meta">⏰ 1个月有效期</div>
+                <div class="card-condition"><strong>条件：</strong>会员</div>
+            </div>
+            <div class="card" data-keywords="棒约翰 披萨 0.1元">
+                <div class="card-header"><div class="card-title">棒约翰</div><span class="card-badge badge-discount">0.1元披萨</span></div>
+                <div class="card-benefit">消费满50元，0.1元换购招牌披萨</div>
+                <div class="card-meta">⏰ —</div>
+                <div class="card-condition"><strong>条件：</strong>会员</div>
+            </div>
+            <div class="card" data-keywords="广州蕉叶 8.8折 蛋糕 生日歌">
+                <div class="card-header"><div class="card-title">广州蕉叶</div><span class="card-badge badge-discount">8.8折+蛋糕</span></div>
+                <div class="card-benefit">专属8.8折 + 小蛋糕 + 唱生日歌</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>提前一天预约+身份证</div>
+            </div>
+            <div class="card" data-keywords="南京大牌档 30元 阳春面">
+                <div class="card-header"><div class="card-title">南京大牌档</div><span class="card-badge badge-discount">30元+阳春面</span></div>
+                <div class="card-benefit">30元无限制代金券 + 阳春面</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>微信注册会员+身份证</div>
+            </div>
+            <div class="card" data-keywords="蜀宴赋 免单 5折 周边">
+                <div class="card-header"><div class="card-title">蜀宴赋</div><span class="card-badge badge-discount">免单/5折</span></div>
+                <div class="card-benefit">双人同行寿星免单 / 单人5折 + 周边</div>
+                <div class="card-meta">⏰ 活动截止6.30</div>
+                <div class="card-condition"><strong>条件：</strong>会员</div>
+            </div>
+            <div class="card" data-keywords="丰收日 满200减100">
+                <div class="card-header"><div class="card-title">丰收日</div><span class="card-badge badge-discount">满200减100</span></div>
+                <div class="card-benefit">满200减100代金券</div>
+                <div class="card-meta">⏰ 30天有效</div>
+                <div class="card-condition"><strong>条件：</strong>会员</div>
+            </div>
+            <div class="card" data-keywords="东盛 碳烤自助 半价 蛋糕">
+                <div class="card-header"><div class="card-title">东盛碳烤自助</div><span class="card-badge badge-discount">半价+蛋糕</span></div>
+                <div class="card-benefit">生日当天半价 + 免费小蛋糕</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>—</div>
+            </div>
+            <div class="card" data-keywords="%Arabica 免费咖啡">
+                <div class="card-header"><div class="card-title">%Arabica</div><span class="card-badge badge-free">免费咖啡</span></div>
+                <div class="card-benefit">免费赠饮一杯</div>
+                <div class="card-meta">⏰ 自生日起1个月内</div>
+                <div class="card-condition"><strong>条件：</strong>有任意消费记录至L1；需填写生日</div>
+            </div>
+            <div class="card" data-keywords="沪上阿姨 6折券">
+                <div class="card-header"><div class="card-title">沪上阿姨</div><span class="card-badge badge-discount">6折券</span></div>
+                <div class="card-benefit">6折券</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>小程序完善生日信息，当天自动发放</div>
+            </div>
+            <div class="card" data-keywords="阿嬷手作 8折券">
+                <div class="card-header"><div class="card-title">阿嬷手作</div><span class="card-badge badge-discount">8折券</span></div>
+                <div class="card-benefit">8折券</div>
+                <div class="card-meta">⏰ 获券当天有效</div>
+                <div class="card-condition"><strong>条件：</strong>小程序填写生日</div>
+            </div>
+            <div class="card" data-keywords="茉酸奶 生日冰箱贴 巨蟹座">
+                <div class="card-header"><div class="card-title">茉酸奶</div><span class="card-badge badge-free">生日冰箱贴</span></div>
+                <div class="card-benefit">生日冰箱贴兑换券（实付满22元）</div>
+                <div class="card-meta">⏰ 按星座月份活动</div>
+                <div class="card-condition"><strong>条件：</strong>小程序注册+完善生日；仅限内陆用户</div>
+            </div>
+            <div class="card" data-keywords="茉莉奶白 生日徽章">
+                <div class="card-header"><div class="card-title">茉莉奶白</div><span class="card-badge badge-free">生日徽章</span></div>
+                <div class="card-benefit">生日限定徽章1枚</div>
+                <div class="card-meta">⏰ 2026年5月1日-5月31日（示例）</div>
+                <div class="card-condition"><strong>条件：</strong>消费满15元；小程序领券+到店核销</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 景区/娱乐 -->
+    <section class="section" id="sec-attraction">
+        <h2 class="section-title"><span class="icon">🎢</span>景区 / 娱乐类</h2>
+        <div class="cards-grid">
+            <div class="card" data-keywords="上海迪士尼 生日徽章 蛋糕 派对">
+                <div class="card-header"><div class="card-title">上海迪士尼乐园</div><span class="card-badge badge-free">生日徽章</span></div>
+                <div class="card-benefit">生日当月免费领取生日徽章1枚；可订主题生日蛋糕（7款）；可举办皇家宴会厅/快餐店生日派对</div>
+                <div class="card-meta">⏰ 徽章每日限量，领完即止</div>
+                <div class="card-condition"><strong>条件：</strong>游客服务中心领取；需出示有效身份证件</div>
+            </div>
+            <div class="card" data-keywords="广州长隆 野生动物世界 半价 蛋糕">
+                <div class="card-header"><div class="card-title">广州长隆野生动物世界</div><span class="card-badge badge-discount">门票半价</span></div>
+                <div class="card-benefit">生日当天凭身份证半价入园；生日徽章；熊猫餐厅领熊猫蛋糕</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>闸口出示证件；年卡会员也可领徽章</div>
+            </div>
+            <div class="card" data-keywords="清远长隆 升房 蛋糕 速通 彩绘">
+                <div class="card-header"><div class="card-title">清远长隆</div><span class="card-badge badge-free">多项礼遇</span></div>
+                <div class="card-benefit">房型升级；酒店/园内蛋糕；1个项目速通；免费儿童彩绘；NPC互动；礼品店8折；单程游艇票</div>
+                <div class="card-meta">⏰ 住客专属</div>
+                <div class="card-condition"><strong>条件：</strong>酒店住客；需提前致电预约</div>
+            </div>
+            <div class="card" data-keywords="北京欢乐谷 免费入园 长寿面">
+                <div class="card-header"><div class="card-title">北京欢乐谷</div><span class="card-badge badge-free">免费入园</span></div>
+                <div class="card-benefit">生日当天凭身份证免费入园；长寿面/小吃；亲友88折；指定餐厅/商店85折；花车巡游免费；3个月内重游5折</div>
+                <div class="card-meta">⏰ 2026年1月16日-12月31日</div>
+                <div class="card-condition"><strong>条件：</strong>团体售票处领取；花车巡游需提前3天预约</div>
+            </div>
+            <div class="card" data-keywords="石景山游乐园 免费入园 摩天轮">
+                <div class="card-header"><div class="card-title">石景山游乐园</div><span class="card-badge badge-free">免费入园+摩天轮</span></div>
+                <div class="card-benefit">凭身份证免费入园 + 摩天轮免费 + 主题活动免费</div>
+                <div class="card-meta">⏰ 2026年全年有效</div>
+                <div class="card-condition"><strong>条件：</strong>无需预约；检票口/项目处出示证件</div>
+            </div>
+            <div class="card" data-keywords="北京环球度假区 优惠券 会员">
+                <div class="card-header"><div class="card-title">北京环球度假区</div><span class="card-badge badge-month">生日月领券</span></div>
+                <div class="card-benefit">生日月内领券，30天有效（具体折扣以官方为准）</div>
+                <div class="card-meta">⏰ 生日月内领取</div>
+                <div class="card-condition"><strong>条件：</strong>官方小程序注册会员→会员惊喜领取</div>
+            </div>
+            <div class="card" data-keywords="重庆欢乐谷 免费入园 徽章 贺卡">
+                <div class="card-header"><div class="card-title">重庆欢乐谷</div><span class="card-badge badge-free">免费入园</span></div>
+                <div class="card-benefit">生日免费入园；徽章+贺卡；长寿面/小吃；餐厅/商店85折；摊位游戏8折；花车巡游免费；亲友88折</div>
+                <div class="card-meta">⏰ 2026年1月16日-12月31日</div>
+                <div class="card-condition"><strong>条件：</strong>持本人身份证件</div>
+            </div>
+            <div class="card" data-keywords="泡泡玛特 生日吧唧 徽章 限量">
+                <div class="card-header"><div class="card-title">泡泡玛特</div><span class="card-badge badge-free">生日吧唧+徽章</span></div>
+                <div class="card-benefit">生日吧唧随机款 + 限定徽章（需当月到店消费）</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>本人持身份证到店；限量（吧唧24000份，徽章20000份）</div>
+            </div>
+            <div class="card" data-keywords="Photoism 免费拍 相框">
+                <div class="card-header"><div class="card-title">Photoism</div><span class="card-badge badge-free">免费拍摄</span></div>
+                <div class="card-benefit">免费拍摄39元生日相框一组</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>仅限本人；每日限量5000张；完成任务</div>
+            </div>
+            <div class="card" data-keywords="无印良品 MUJI 生日礼遇 会员">
+                <div class="card-header"><div class="card-title">无印良品MUJI</div><span class="card-badge badge-month">生日礼遇</span></div>
+                <div class="card-benefit">不同会员等级对应不同生日礼遇（优惠券/礼品）</div>
+                <div class="card-meta">⏰ 生日当月2日发放</div>
+                <div class="card-condition"><strong>条件：</strong>会员；以生日前一日等级为准</div>
+            </div>
+            <div class="card" data-keywords="迪卡侬 邮差包 免费领取">
+                <div class="card-header"><div class="card-title">迪卡侬</div><span class="card-badge badge-free">免费礼品</span></div>
+                <div class="card-benefit">生日当月到店任意消费，免费兑换限定礼品（如定制银色运动邮差包）</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>迪卡侬小程序注册+填写生日；仅限部分城市指定门店</div>
+            </div>
+            <div class="card" data-keywords="长隆白虎餐厅 自助 5折">
+                <div class="card-header"><div class="card-title">长隆白虎餐厅</div><span class="card-badge badge-discount">寿星5折</span></div>
+                <div class="card-benefit">寿星5折，同行者8折 + 小礼物</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>—</div>
+            </div>
+            <div class="card" data-keywords="广州塔璇玑 自助餐 半价">
+                <div class="card-header"><div class="card-title">广州塔璇玑地中海自助</div><span class="card-badge badge-discount">自助餐半价</span></div>
+                <div class="card-benefit">自助餐半价 + 生日蛋糕可打包</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>凭身份证</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 视频/音乐/平台 -->
+    <section class="section" id="sec-media">
+        <h2 class="section-title"><span class="icon">📺</span>视频 / 音乐 / 平台类</h2>
+        <div class="cards-grid">
+            <div class="card" data-keywords="腾讯视频 VIP 生日礼包">
+                <div class="card-header"><div class="card-title">腾讯视频</div><span class="card-badge badge-month">3-31天VIP</span></div>
+                <div class="card-benefit">生日礼包：3-31天VIP（视等级而定）+ V币</div>
+                <div class="card-meta">⏰ 生日当天起7天内领取</div>
+                <div class="card-condition"><strong>条件：</strong>需有VIP记录；APP内领取</div>
+            </div>
+            <div class="card" data-keywords="爱奇艺 VIP 点播券 积分">
+                <div class="card-header"><div class="card-title">爱奇艺</div><span class="card-badge badge-month">3-7天VIP</span></div>
+                <div class="card-benefit">生日当月：3-7天VIP + 点播券 + 积分</div>
+                <div class="card-meta">⏰ 会员中心→生日礼包</div>
+                <div class="card-condition"><strong>条件：</strong>需提前填写生日</div>
+            </div>
+            <div class="card" data-keywords="优酷 VIP 生日月">
+                <div class="card-header"><div class="card-title">优酷</div><span class="card-badge badge-month">1-7天VIP</span></div>
+                <div class="card-benefit">生日月：1-7天VIP</div>
+                <div class="card-meta">⏰ 自动发放</div>
+                <div class="card-condition"><strong>条件：</strong>个人资料设置生日</div>
+            </div>
+            <div class="card" data-keywords="B站 哔哩哔哩 大会员 萌节 吃谷">
+                <div class="card-header"><div class="card-title">B站（哔哩哔哩）</div><span class="card-badge badge-free">千万现金直补</span></div>
+                <div class="card-benefit">大会员萌节：千万现金直补 + 线下吃谷满减券（8品牌127城431门店）</div>
+                <div class="card-meta">⏰ 9月底至10月初</div>
+                <div class="card-condition"><strong>条件：</strong>大会员；搜索"大会员吃谷金"参与</div>
+            </div>
+            <div class="card" data-keywords="QQ音乐 绿钻 3天">
+                <div class="card-header"><div class="card-title">QQ音乐</div><span class="card-badge badge-free">3天绿钻</span></div>
+                <div class="card-benefit">收藏歌曲领取3天绿钻</div>
+                <div class="card-meta">⏰ 活动期间</div>
+                <div class="card-condition"><strong>条件：</strong>APP内活动页面</div>
+            </div>
+            <div class="card" data-keywords="网易云音乐 免费听 6折 会员">
+                <div class="card-header"><div class="card-title">网易云音乐</div><span class="card-badge badge-discount">6折购会员</span></div>
+                <div class="card-benefit">生日当天无视会员所有歌曲免费听 + 6折购会员</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>账号设置生日</div>
+            </div>
+            <div class="card" data-keywords="酷狗音乐 咪咕音乐 生日福利">
+                <div class="card-header"><div class="card-title">酷狗/咪咕音乐</div><span class="card-badge badge-month">运营商兑换</span></div>
+                <div class="card-benefit">运营商积分可兑换会员；部分活动有生日体验卡</div>
+                <div class="card-meta">⏰ 以平台活动为准</div>
+                <div class="card-condition"><strong>条件：</strong>具体以平台活动为准</div>
+            </div>
+            <div class="card" data-keywords="支付宝 生日皮肤 优酷VIP 积分">
+                <div class="card-header"><div class="card-title">支付宝</div><span class="card-badge badge-month">等级礼遇</span></div>
+                <div class="card-benefit">大众：88积分+生日皮肤；黄金：3天优酷VIP；铂金：周卡；钻石：月卡</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>支付宝会员→生日礼</div>
+            </div>
+            <div class="card" data-keywords="京东 京豆 生日礼 优惠券">
+                <div class="card-header"><div class="card-title">京东</div><span class="card-badge badge-free">500京豆</span></div>
+                <div class="card-benefit">生日当天500京豆 + 多种优惠券弹窗</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>生日当天留意APP推送</div>
+            </div>
+            <div class="card" data-keywords="淘宝 淘金币 立减券 66元">
+                <div class="card-header"><div class="card-title">淘宝</div><span class="card-badge badge-discount">66元立减券</span></div>
+                <div class="card-benefit">600淘金币 或 66元立减券</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>搜索【淘宝生日礼】</div>
+            </div>
+            <div class="card" data-keywords="小红书 流量券 1000">
+                <div class="card-header"><div class="card-title">小红书</div><span class="card-badge badge-free">1000流量券</span></div>
+                <div class="card-benefit">生日当天送1000流量券</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>实名认证用户</div>
+            </div>
+            <div class="card" data-keywords="美团 外卖 0.01元 30元券">
+                <div class="card-header"><div class="card-title">美团</div><span class="card-badge badge-discount">0.01元购30元</span></div>
+                <div class="card-benefit">部分用户0.01元购30元无门槛券；联合蜜雪冰城送免单券</div>
+                <div class="card-meta">⏰ 生日当天/当月</div>
+                <div class="card-condition"><strong>条件：</strong>APP内活动</div>
+            </div>
+            <div class="card" data-keywords="饿了么 满100减50 蛋糕折扣">
+                <div class="card-header"><div class="card-title">饿了么</div><span class="card-badge badge-discount">满100减50</span></div>
+                <div class="card-benefit">满100减50大额券；部分人有蛋糕折扣</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>—</div>
+            </div>
+            <div class="card" data-keywords="美图秀秀 免费会员 1天">
+                <div class="card-header"><div class="card-title">美图秀秀</div><span class="card-badge badge-free">1天会员</span></div>
+                <div class="card-benefit">免费会员1天</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>—</div>
+            </div>
+            <div class="card" data-keywords="优酷 330天 支付宝会员">
+                <div class="card-header"><div class="card-title">支付宝会员（限时）</div><span class="card-badge badge-free">330天优酷</span></div>
+                <div class="card-benefit">生日当月可领330天优酷会员</div>
+                <div class="card-meta">⏰ 生日7天内可见入口</div>
+                <div class="card-condition"><strong>条件：</strong>支付宝会员页面</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 银行/信用卡 -->
+    <section class="section" id="sec-bank">
+        <h2 class="section-title"><span class="icon">💳</span>银行 / 信用卡类（多倍积分）</h2>
+        <div class="cards-grid">
+            <div class="card" data-keywords="招商银行 10倍积分 经典白 百夫长">
+                <div class="card-header"><div class="card-title">招商银行</div><span class="card-badge badge-points">10倍积分</span></div>
+                <div class="card-benefit">高端卡（经典白/百夫长白金/黑金）：生日当天10倍积分，上限1万积分</div>
+                <div class="card-meta">⏰ 生日当天；奖励次月7日到账</div>
+                <div class="card-condition"><strong>条件：</strong>经典白需提前报名（掌上生活APP）；支付宝/微信二选一</div>
+            </div>
+            <div class="card" data-keywords="建设银行 龙支付 5倍 10倍 积分">
+                <div class="card-header"><div class="card-title">建设银行</div><span class="card-badge badge-points">5-10倍积分</span></div>
+                <div class="card-benefit">4星级：生日当天5倍积分，上限3万；5-7星：10倍积分，上限5万</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>星级以生日前一日为准；龙支付消费</div>
+            </div>
+            <div class="card" data-keywords="交通银行 5倍积分 白金卡 2倍">
+                <div class="card-header"><div class="card-title">交通银行</div><span class="card-badge badge-points">5倍+2倍积分</span></div>
+                <div class="card-benefit">生日当天餐饮娱乐类5倍积分，上限10万；白金卡生日当月2倍积分，上限100万</div>
+                <div class="card-meta">⏰ 生日当天+生日月</div>
+                <div class="card-condition"><strong>条件：</strong>指定MCC商户（5812餐厅/5813酒吧/7011酒店等）</div>
+            </div>
+            <div class="card" data-keywords="农业银行 翡翠 钻石 皇冠 5-10倍积分">
+                <div class="card-header"><div class="card-title">农业银行</div><span class="card-badge badge-points">5-10倍积分</span></div>
+                <div class="card-benefit">翡翠：生日当月5倍积分，上限3万；钻石：8倍上限5万；皇冠：10倍上限10万</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>翡翠/钻石/皇冠会员</div>
+            </div>
+            <div class="card" data-keywords="兴业银行 白金卡 4倍积分 10万">
+                <div class="card-header"><div class="card-title">兴业银行</div><span class="card-badge badge-points">4倍积分</span></div>
+                <div class="card-benefit">标准白金卡：生日当天4倍积分，上限10万</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>主附卡均可参与；消费33400元拿满</div>
+            </div>
+            <div class="card" data-keywords="光大银行 3倍积分 白金卡">
+                <div class="card-header"><div class="card-title">光大银行</div><span class="card-badge badge-points">3倍积分</span></div>
+                <div class="card-benefit">白金卡及以上生日当月3倍积分；普卡/金卡2倍积分</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>仅主卡参与</div>
+            </div>
+            <div class="card" data-keywords="中信银行 2万积分 6折券">
+                <div class="card-header"><div class="card-title">中信银行</div><span class="card-badge badge-points">2万积分+6折券</span></div>
+                <div class="card-benefit">生日专属2万积分 + 兑换6折券</div>
+                <div class="card-meta">⏰ —</div>
+                <div class="card-condition"><strong>条件：</strong>动卡空间APP报名</div>
+            </div>
+            <div class="card" data-keywords="民生银行 3倍积分 固定额度">
+                <div class="card-header"><div class="card-title">民生银行</div><span class="card-badge badge-points">3倍积分</span></div>
+                <div class="card-benefit">生日当天3倍积分，上限为固定额度的2倍</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>主附卡均可；刷满2/3固定额度</div>
+            </div>
+            <div class="card" data-keywords="华夏银行 2倍积分 50万">
+                <div class="card-header"><div class="card-title">华夏银行</div><span class="card-badge badge-points">2倍积分</span></div>
+                <div class="card-benefit">生日前后3天（共7天）所有卡主卡消费2倍积分，上限50万</div>
+                <div class="card-meta">⏰ 生日前后3天</div>
+                <div class="card-condition"><strong>条件：</strong>主卡参与</div>
+            </div>
+            <div class="card" data-keywords="北京银行 2倍积分 生肖卡">
+                <div class="card-header"><div class="card-title">北京银行</div><span class="card-badge badge-points">2-3倍积分</span></div>
+                <div class="card-benefit">生日当天2倍积分，上限1万；生肖卡生日当月网付3倍，上限3万</div>
+                <div class="card-meta">⏰ 生日当天/月</div>
+                <div class="card-condition"><strong>条件：</strong>除生肖卡外的其他卡</div>
+            </div>
+            <div class="card" data-keywords="广发银行 2倍积分 10万">
+                <div class="card-header"><div class="card-title">广发银行</div><span class="card-badge badge-points">2倍积分</span></div>
+                <div class="card-benefit">部分卡种生日当月2倍积分，上限10万</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>仅主卡；鼎级卡/尊旅卡不参与</div>
+            </div>
+            <div class="card" data-keywords="邮储银行 白金卡 金卡 2倍积分">
+                <div class="card-header"><div class="card-title">邮储银行</div><span class="card-badge badge-points">2倍积分</span></div>
+                <div class="card-benefit">白金卡/金卡生日当月主附卡各2倍积分，上限为信用额度10倍</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>主附卡均可</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 航空公司 -->
+    <section class="section" id="sec-airline">
+        <h2 class="section-title"><span class="icon">✈️</span>航空公司类</h2>
+        <div class="cards-grid">
+            <div class="card" data-keywords="海南航空 升舱券 金鹏俱乐部">
+                <div class="card-header"><div class="card-title">海南航空</div><span class="card-badge badge-free">升舱券</span></div>
+                <div class="card-benefit">白金卡：3张积分升舱券；金卡：2张；银卡：1张（2026积分定额）</div>
+                <div class="card-meta">⏰ 生日当月自动发放；券有效期6个月</div>
+                <div class="card-condition"><strong>条件：</strong>金鹏俱乐部贵宾会员；账户有完整生日信息</div>
+            </div>
+            <div class="card" data-keywords="东方航空 积分奖励 1000里程">
+                <div class="card-header"><div class="card-title">东方航空</div><span class="card-badge badge-points">额外积分+里程</span></div>
+                <div class="card-benefit">生日当月额外积分奖励；特定活动完成飞行最高可得1000里程奖励</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>明珠会员；需报名</div>
+            </div>
+            <div class="card" data-keywords="南方航空 1000里程 明珠会员">
+                <div class="card-header"><div class="card-title">南方航空</div><span class="card-badge badge-points">1000里程</span></div>
+                <div class="card-benefit">特定月份生日会员完成飞行最高可得1000里程奖励</div>
+                <div class="card-meta">⏰ 活动期间</div>
+                <div class="card-condition"><strong>条件：</strong>明珠会员</div>
+            </div>
+            <div class="card" data-keywords="中国国航 知音 生日活动">
+                <div class="card-header"><div class="card-title">中国国航</div><span class="card-badge badge-month">知音活动</span></div>
+                <div class="card-benefit">知音会员生日相关活动（以官网/APP公告为准）</div>
+                <div class="card-meta">⏰ 以官方为准</div>
+                <div class="card-condition"><strong>条件：</strong>凤凰知音会员</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 酒店 -->
+    <section class="section" id="sec-hotel">
+        <h2 class="section-title"><span class="icon">🏨</span>酒店类</h2>
+        <div class="cards-grid">
+            <div class="card" data-keywords="希尔顿 积分 礼遇">
+                <div class="card-header"><div class="card-title">希尔顿</div><span class="card-badge badge-month">积分加倍</span></div>
+                <div class="card-benefit">会员生日当月通常有积分加倍或特别礼遇</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>HHonors会员；需提前在账户设置生日</div>
+            </div>
+            <div class="card" data-keywords="万豪 积分 房券 升级">
+                <div class="card-header"><div class="card-title">万豪</div><span class="card-badge badge-month">生日礼遇</span></div>
+                <div class="card-benefit">会员生日礼遇（积分/房券/升级，视等级而定）</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>Marriott Bonvoy会员</div>
+            </div>
+            <div class="card" data-keywords="洲际 IHG 积分 房券">
+                <div class="card-header"><div class="card-title">洲际酒店集团</div><span class="card-badge badge-month">生日礼遇</span></div>
+                <div class="card-benefit">会员生日当月可能有积分奖励或房券</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>IHG优悦会会员</div>
+            </div>
+            <div class="card" data-keywords="横琴湾酒店 长隆 生日布置 蛋糕">
+                <div class="card-header"><div class="card-title">长隆横琴湾酒店</div><span class="card-badge badge-free">多项礼遇</span></div>
+                <div class="card-benefit">精美生日徽章+纪念品+贺卡；0.5磅生日蛋糕；房间生日布置；单程游艇票；房型升级；餐饮85折；商品8折</div>
+                <div class="card-meta">⏰ 住客专属</div>
+                <div class="card-condition"><strong>条件：</strong>酒店住客；蛋糕需提前4小时预约；布置需提前1天致电</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 零售/美妆 -->
+    <section class="section" id="sec-retail">
+        <h2 class="section-title"><span class="icon">🛍️</span>零售 / 美妆类</h2>
+        <div class="cards-grid">
+            <div class="card" data-keywords="迪卡侬 邮差包 免费 运动">
+                <div class="card-header"><div class="card-title">迪卡侬</div><span class="card-badge badge-free">免费邮差包</span></div>
+                <div class="card-benefit">生日当月到店任意消费，免费兑换限定礼品（如定制银色运动邮差包）</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>迪卡侬小程序注册+填写生日；仅限部分城市指定门店</div>
+            </div>
+            <div class="card" data-keywords="优衣库 30元券 满减">
+                <div class="card-header"><div class="card-title">优衣库</div><span class="card-badge badge-discount">30元券</span></div>
+                <div class="card-benefit">生日当月30元优惠券（满300可用）</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>UNIQLO会员；APP/小程序注册+填写生日</div>
+            </div>
+            <div class="card" data-keywords="MUJI 无印良品 生日礼遇 优惠券">
+                <div class="card-header"><div class="card-title">MUJI无印良品</div><span class="card-badge badge-month">生日礼遇</span></div>
+                <div class="card-benefit">不同会员等级对应不同生日礼遇（优惠券/礼品）</div>
+                <div class="card-meta">⏰ 生日当月2日发放</div>
+                <div class="card-condition"><strong>条件：</strong>会员；以生日前一日等级为准</div>
+            </div>
+            <div class="card" data-keywords="丝芙兰 小样 生日福利">
+                <div class="card-header"><div class="card-title">丝芙兰</div><span class="card-badge badge-free">免费小样</span></div>
+                <div class="card-benefit">生日礼遇（通常为免费小样或折扣券）</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>丝芙兰会员；需到店领取</div>
+            </div>
+            <div class="card" data-keywords="YSL 祖玛珑 免费小样">
+                <div class="card-header"><div class="card-title">YSL / 祖玛珑</div><span class="card-badge badge-free">免费小样</span></div>
+                <div class="card-benefit">高端美妆品牌生日小样</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>需到店领取；品牌会员</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 电商/APP -->
+    <section class="section" id="sec-app">
+        <h2 class="section-title"><span class="icon">📱</span>电商 / APP 类</h2>
+        <div class="cards-grid">
+            <div class="card" data-keywords="京东 京豆 500 优惠券">
+                <div class="card-header"><div class="card-title">京东</div><span class="card-badge badge-free">500京豆</span></div>
+                <div class="card-benefit">生日当天500京豆 + 多种优惠券弹窗</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>生日当天留意APP推送</div>
+            </div>
+            <div class="card" data-keywords="淘宝 淘金币 66元 立减券">
+                <div class="card-header"><div class="card-title">淘宝</div><span class="card-badge badge-discount">66元立减券</span></div>
+                <div class="card-benefit">600淘金币 或 66元立减券</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>搜索【淘宝生日礼】</div>
+            </div>
+            <div class="card" data-keywords="支付宝 积分 皮肤 优酷">
+                <div class="card-header"><div class="card-title">支付宝</div><span class="card-badge badge-month">等级礼遇</span></div>
+                <div class="card-benefit">大众：88积分+生日皮肤；黄金：3天优酷VIP；铂金：周卡；钻石：月卡</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>支付宝会员→生日礼</div>
+            </div>
+            <div class="card" data-keywords="美团 外卖 0.01元 30元 蜜雪冰城">
+                <div class="card-header"><div class="card-title">美团</div><span class="card-badge badge-discount">0.01元购30元</span></div>
+                <div class="card-benefit">部分用户0.01元购30元无门槛券；联合蜜雪冰城送免单券</div>
+                <div class="card-meta">⏰ 生日当天/当月</div>
+                <div class="card-condition"><strong>条件：</strong>APP内活动</div>
+            </div>
+            <div class="card" data-keywords="饿了么 满100减50 蛋糕">
+                <div class="card-header"><div class="card-title">饿了么</div><span class="card-badge badge-discount">满100减50</span></div>
+                <div class="card-benefit">满100减50大额券；部分人有蛋糕折扣</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>—</div>
+            </div>
+            <div class="card" data-keywords="小红书 1000流量券">
+                <div class="card-header"><div class="card-title">小红书</div><span class="card-badge badge-free">1000流量券</span></div>
+                <div class="card-benefit">生日当天送1000流量券</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>实名认证用户</div>
+            </div>
+            <div class="card" data-keywords="美图秀秀 1天会员">
+                <div class="card-header"><div class="card-title">美图秀秀</div><span class="card-badge badge-free">1天会员</span></div>
+                <div class="card-benefit">免费会员1天</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>—</div>
+            </div>
+            <div class="card" data-keywords="招商银行 M+会员 立减券">
+                <div class="card-header"><div class="card-title">招商银行M+会员</div><span class="card-badge badge-discount">三选一券</span></div>
+                <div class="card-benefit">生日月领取三选一优惠券</div>
+                <div class="card-meta">⏰ 生日月</div>
+                <div class="card-condition"><strong>条件：</strong>APP内活动页面</div>
+            </div>
+            <div class="card" data-keywords="工商银行 888i豆 立减">
+                <div class="card-header"><div class="card-title">工商银行</div><span class="card-badge badge-free">888i豆</span></div>
+                <div class="card-benefit">888i豆（价值约8.8元）</div>
+                <div class="card-meta">⏰ —</div>
+                <div class="card-condition"><strong>条件：</strong>APP内活动页面；三次抽奖机会</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 运营商 -->
+    <section class="section" id="sec-telco">
+        <h2 class="section-title"><span class="icon">📶</span>运营商类</h2>
+        <div class="cards-grid">
+            <div class="card" data-keywords="中国移动 免费通话 短信 流量 积分">
+                <div class="card-header"><div class="card-title">中国移动</div><span class="card-badge badge-free">全免费</span></div>
+                <div class="card-benefit">生日当天国内电话/短信/流量免费用（无上限）+ 专属积分</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>网龄生日当月领取；全球通用户额外权益</div>
+            </div>
+            <div class="card" data-keywords="中国联通 2G流量 生日当月">
+                <div class="card-header"><div class="card-title">中国联通</div><span class="card-badge badge-free">2G流量</span></div>
+                <div class="card-benefit">生日当月2G流量</div>
+                <div class="card-meta">⏰ 生日当月</div>
+                <div class="card-condition"><strong>条件：</strong>我的→会员中心领取</div>
+            </div>
+            <div class="card" data-keywords="中国电信 200金豆 流量 彩铃">
+                <div class="card-header"><div class="card-title">中国电信</div><span class="card-badge badge-free">200金豆+流量</span></div>
+                <div class="card-benefit">生日当天200金豆 + DIY视频彩铃体验会员 + 5-10G流量</div>
+                <div class="card-meta">⏰ 生日当天</div>
+                <div class="card-condition"><strong>条件：</strong>电信APP</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips -->
+    <div class="tips-box">
+        <h3>💡 通用领取建议</h3>
+        <ul>
+            <li><strong>提前1个月</strong>：在各品牌小程序/APP注册会员并完善生日信息（多数不可修改）</li>
+            <li><strong>生日前7天</strong>：检查自动发放的券包（海底捞、茶百道、太二、肯德基、汉堡王等）</li>
+            <li><strong>生日当天</strong>：上午领支付宝/淘宝/京东生日礼 → 中午核销餐饮券 → 下午景区凭身份证领福利 → 晚上用银行多倍积分消费</li>
+            <li><strong>生日月</strong>：持续领取视频平台生日VIP、运营商流量/话费券</li>
+            <li><strong>设置日历提醒</strong>：标记"生日福利周"（生日前7天至生日后7天），避免遗漏</li>
+        </ul>
+    </div>
+
+</main>
+
+<footer>
+    <p>🎂 中国生日福利全攻略 | 数据更新时间：2026年7月</p>
+    <p>本页面仅供个人参考，具体福利以各商家官方最新公告为准</p>
+</footer>
+
+<script>
+    // Category switching
+    const catBtns = document.querySelectorAll('.cat-btn');
+    const sections = document.querySelectorAll('.section');
+
+    catBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            catBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cat = btn.dataset.cat;
+            sections.forEach(sec => {
+                sec.classList.remove('active');
+                if (cat === 'all' || sec.id === 'sec-' + cat) {
+                    sec.classList.add('active');
+                }
+            });
+            // Clear search when switching category
+            document.getElementById('searchInput').value = '';
+            filterCards('');
+        });
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        // Show all sections when searching
+        if (query) {
+            sections.forEach(sec => sec.classList.add('active'));
+            catBtns.forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-cat="all"]').classList.add('active');
+        } else {
+            const activeCat = document.querySelector('.cat-btn.active');
+            const cat = activeCat ? activeCat.dataset.cat : 'all';
+            sections.forEach(sec => {
+                sec.classList.remove('active');
+                if (cat === 'all' || sec.id === 'sec-' + cat) {
+                    sec.classList.add('active');
+                }
+            });
+        }
+        filterCards(query);
+    });
+
+    function filterCards(query) {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            const keywords = (card.dataset.keywords || '').toLowerCase();
+            const text = card.textContent.toLowerCase();
+            if (!query || keywords.includes(query) || text.includes(query)) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Hide empty sections
+        sections.forEach(sec => {
+            const visibleCards = sec.querySelectorAll('.card[style=""]');
+            const allCards = sec.querySelectorAll('.card');
+            let hasVisible = false;
+            allCards.forEach(c => {
+                if (c.style.display !== 'none') hasVisible = true;
+            });
+            if (!hasVisible && sec.id !== 'sec-all') {
+                sec.style.display = 'none';
+            } else if (query || sec.classList.contains('active')) {
+                sec.style.display = '';
+            }
+        });
+
+        // Show "no results" if needed
+        const allHidden = document.querySelectorAll('.card[style="display: none;"]');
+        const totalCards = document.querySelectorAll('.card').length;
+        let noResults = document.querySelector('.no-results');
+        if (totalCards === allHidden.length && query) {
+            if (!noResults) {
+                noResults = document.createElement('div');
+                noResults.className = 'no-results';
+                noResults.textContent = '😕 没有找到匹配的福利，试试其他关键词？';
+                document.querySelector('.container').appendChild(noResults);
+            }
+        } else if (noResults) {
+            noResults.remove();
+        }
+    }
+</script>
+
+</body>
+</html>
